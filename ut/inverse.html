@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+      
+  <title>inverse</title>
+</head>
+<body>
+  <div class="navbalk">
+        <button class="button" onclick="location.href='../home.html'">Home</button>
+        <button class="button" onclick="location.href='ABC.html'">ABC-formule</button>
+        <button class="button" onclick="location.href='snijpunten.html'">Lijn snij</button>
+        <button class="active" onclick="location.href='inverse.html'">Inverse</button>
+        <button class="button" onclick="location.href='conver.html'">Convert</button>
+      </div>
+  <p><strong>a</strong>x + <strong>b</strong><br>-------- = y<br>
+  <strong>c</strong>x + <strong>d</strong>
+
+<div>
+  <label for="a">a:</label>
+  <input type="number" size="3" id="a" name="a" class="inverse">
+  <label for="a">b:</label>
+  <input type="number" size="3" id="b" name="b" class="inverse"><br>
+  <p>~~~~~~~~~~~~~~~~~~<br>
+  <label for="a">c:</label>
+  <input type="number" size="3" id="c" name="c" class="inverse">
+  <label for="a">d:</label>
+  <input type="number" size="3" id="d" name="d" class="inverse"><br> 
+  <button onclick="inverse()">go!</button>
+</div> 
+
+<script>
+  function inverse(){
+    //inputs krijgen
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+    let c = document.getElementById("c").value;
+    let d = document.getElementById("d").value;
+
+    
+    document.getElementById("antw").style.display = "";
+    //het antwoord mooi noteren met deel strepen enzo
+    //ook zorgen dat er geen 1x of 0x wordt geprint
+    document.getElementById("antwoord").innerHTML = (d*-1 == 1 ? "x" : d*-1 + "x" | d*-1 == 0 ? "" : d*-1 + "x" | d*-1 == -1 ? "-x": d*-1 + "x") + (b == 0 ? "" : " + " + b | d*-1 == 0 ? b : " + " + b) + "<br>" + "--------- " + " = y" + "<br>" + (c == 1 ? "x" : c + "x" | c == 0 ? "" : c + "x"  | c == -1 ? "-x" : c + "x") + (a*-1 == 0 ? "" : " + " + a*-1 | a*-1 < 0 ? a*-1 : " + " + a*-1 | c == o ? a*-1 : " + " + a*-1);
+    document.getElementById("functieHH").innerHTML = (a == 0 ? "" : a + "x" | a == 1 ? "x" : a + "x") + (b == 0 ? "" : " + " + b) + "<br>" + "---------" + "<br>" + (c == 1 ? "x" : c + "x" | c == 0 ? "" : c + "x" | c == -1 ? "-x" : c + "x") + (d == 0 ? "" : " + " + d | c == 0 ? d : " + " + d);
+
+    
+  
+    
+ 
+  }
+</script> 
+<div id="antw" style="display:none;">
+<p>de inverse van de functie:</p>
+<p id="functieHH"></p>
+<p>is</p>
+<p id="antwoord"></p>
+</div>
+</body>
+</html>

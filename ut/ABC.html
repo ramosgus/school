@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>ew wiskunde</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+      
+    </head>
+    <body><div class="navbalk">
+        <button class="button" onclick="location.href='../home.html'">Home</button>
+        <button class="active" onclick="location.href='ABC.html'">ABC-formule</button>
+        <button class="button" onclick="location.href='snijpunten.html'">Lijn snij</button>
+        <button class="button" onclick="location.href='inverse.html'">Inverse</button>
+        <button class="button" onclick="location.href='conver.html'">Convert</button>
+      </div>
+    <p><strong>a</strong>x&#x00B2; + <strong>b</strong>x + <strong>c</strong> = 0<br>
+    Lost op voor x.</p>
+    <div>
+      <p> a:</p><input type="number" id="a" name="a" size="3" class="ABCform,">
+      <p> b:</p><input type="number" id="b" name="b" size="3" class="ABCform,">
+      <p> c:</p><input type="number" id="c" name="c" size="3" class="ABCform,"><br>
+      <button onclick="abcformule()">go!</button>
+    </div>
+
+    <p id="antw"></p>
+      
+    <script>
+      //dit heeft flint gedaan
+      function abcformule(){
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+        let c = document.getElementById("c").value;
+        let x;
+        let x2;
+
+        //kijken of het 2 oplossingen geeft of 1 of geen
+        if ((Math.sqrt(Math.pow(b, 2)-4*a*c)).toFixed(3) == Math.sqrt(Math.pow(b, 2)-4*a*c)){
+          x = (-b+Math.sqrt(Math.pow(b, 2)-4*a*c))/(2*a);
+          x2 = (-b-Math.sqrt(Math.pow(b, 2)-4*a*c))/(2*a);
+        }
+        else if((Math.pow(b, 2)-4*a*c) > 0){
+          if (b == 0){
+            x = "√(" + -1*c + "/" + a + ")"
+            x2 = "-√(" + -1*c + "/" + a + ")"
+          }
+          else{
+            x = "(-" + b + "+√(" + (Math.pow(b, 2)-4*a*c) + "))/(" + 2*a + ")";
+            x2 = "(-" + b + "-√(" + (Math.pow(b, 2)-4*a*c) + "))/(" + 2*a + ")";
+          }
+        }
+        else {
+          x = "Geen oplossingen";
+          document.getElementById("antw").innerHTML = x;
+        }
+
+        //printen op het scherm
+        if (x != x2){
+          document.getElementById("antw").innerHTML = x + " OF " + x2;
+        }
+        else{
+          document.getElementById("antw").innerHTML = x;
+        }
+      }
+    </script>
+  </body>
+</html>

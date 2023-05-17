@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../style.css">
+  <title>snijpunten</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  
+</head>
+<body>
+  <div class="navbalk">
+        <button class="button" onclick="location.href='../home.html'">Home</button>
+        <button class="button" onclick="location.href='ABC.html'">ABC-formule</button>
+        <button class="active" onclick="location.href='snijpunten.html'">Lijn snij</button>
+        <button class="button" onclick="location.href='inverse.html'">Inverse</button>
+        <button class="button" onclick="location.href='conver.html'">Convert</button>
+  </div>
+  <p><strong>a</strong>x + <strong>b</strong> = <strong>c</strong>x + <strong>d</strong><br>
+  Los op voor snijpunt.
+  <div>
+    <label for="a">a:</label><input type="number" id="a" name="a" size="3" class="snij">
+    <label for="b">b:</label><input type="number" id="b" name="b" size="3" class="snij">
+    <label for="c">c:</label><input type="number" id="c" name="c" size="3" class="snij">
+    <label for="d">d:</label><input type="number" id="d" name="d" size="3" class="snij"><br>
+    <button onclick="snijpunten()">go!</button>  
+
+    <p id="antwoord"></p>
+  </div> 
+<script>
+  function snijpunten(){
+    //input valuta krijgen
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value; 
+    let c = document.getElementById("c").value;
+    let d = document.getElementById("d").value;
+    let x;
+    let y;
+    //deze formules heb ik schriftelijk uitgewerkt
+    x = (d - b)/(a - c);
+    y = a*x+(1*b);
+    //printen
+    document.getElementById("antwoord").innerHTML = "(x; y) = (" + x + "; " + y + ")";
+  }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>ew wiskunde</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+      
+    </head>
+    <body>
+      <div class="navbalk">
+        <button class="button" onclick="location.href='../home.html'">Home</button>
+        <button class="button" onclick="location.href='ABC.html'">ABC-formule</button>
+        <button class="button" onclick="location.href='snijpunten.html'">Lijn snij</button>
+        <button class="button" onclick="location.href='inverse.html'">Inverse</button>
+        <button class="active" onclick="location.href='conver.html'">Convert</button>
+      </div>
+
+      <script>
+        //flint ook
+        function convertdb(){
+          //clear het antw
+          document.getElementById("antw").innerHTML = "";
+
+          //maak lijst voor binair getal
+          let binair = [];
+
+          //krijg nummer
+          let num = document.getElementById("DecimaalB").value;
+          let index = 0;
+
+          //while loop om binair te berekenen
+          while(num != 0){
+            //of het even is,
+            if ((num/2) == Math.floor(num/2)){
+              num = num/2;
+              binair[index] = "0";
+            }
+            //of oneven
+            else{
+              num = Math.floor(num/2);
+              binair[index] = "1";
+            }
+            index++;
+          }
+
+          //antw invullen
+          for(let i = 0; i < binair.length; i++){
+            document.getElementById("antw").innerHTML =  binair[i] + document.getElementById("antw").innerHTML;
+          }
+        }
+        
+      
+      </script>
+
+      <label for="DecimaalB">a:</label><input type="number" id="DecimaalB" name="DecimaalB" size="3" class="conv">
+      <button onclick="convertdb();">go!</button>
+    <p>Dit is </p><p id="antw"></p><p> in binair <p>
+    </body>
+</html>

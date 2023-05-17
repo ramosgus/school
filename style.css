@@ -1,0 +1,119 @@
+:root {
+  --grey1: #161616;
+  --grey2: #2D2D2D;
+  --orang: #ff5f00;
+  --grey3: #424242;
+  --blue: #00A0FF;
+}
+body {
+  overflow: scroll;
+  background-color: var(--grey1);
+}
+*{
+  font-family: 'Poppins', sans-serif;
+}
+::-webkit-scrollbar {
+  width: 1px;
+}
+::-webkit-scrollbar-corner {
+  width: 1px;
+  height: 1px;
+}
+.navbalk {
+  background-color: var(--grey2);
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px; 
+  margin: 5px;
+  }
+.button {
+  display: inline-block;
+  color: var(--blue);
+  text-decoration: none;
+  height: 20px;
+  width: 200px;
+  background-color: var(--grey1);
+  border-radius: 100px;
+  box-shadow: var(--blue) 1px 1px 5px;
+  border: red 2px;
+  transition-duration: 0.2s;	
+  }			
+.button:hover {
+  background: var(--grey3);
+  color: var(--orang);
+  transition-duration: 0.2s;
+  box-shadow: var(--orang) 1px 1px 5px;
+
+  }
+.active {
+  display: inline-block;
+  color: var(--orang);
+  text-decoration: none;
+  height: 20px;
+  width: 200px;
+  background-color: var(--grey3);
+  border-radius: 100px;
+  box-shadow: var(--orang) 1px 1px 5px;
+  border: red 2px;
+  }
+.introductie {
+  color: #FFFFFF;
+  }
+.maillink {
+  text-decoration: none;
+  }
+h1,h3,p {
+  color: #FFF;
+  font-family: 'Poppins', sans-serif;
+  }
+table {
+  border: solid var(--grey1);
+  border-radius: 15px;
+  
+  }
+th, td {
+  color: #FFFFFF;
+  border: solid var(--blue);
+  border-radius: 10px;
+  width: 32vh;
+  height: 7vh;
+  }
+.niks {
+      opacity: 0.0;
+      }
+.tijden, .dagen {
+  border: solid var(--orang);
+  opacity: 0.7;
+  border-radius: 10px;
+  }
+.largeButton {
+  display: block;
+  color: aliceblue;
+  text-decoration: none;
+  height: 100vh;
+  width: 100vw;
+  background-image: radial-gradient(var(--blue), var(--grey2));
+  border-radius: 10px;	
+  text-align: center;
+  border: none;
+  align-self: center;
+  
+}
+input {
+  margin: 2px;
+}
+label {
+  color: #FFF;
+}
+input[type='number']{
+  width: 50px;
+  margin: 0;  
+  border-radius: 4px;
+  display: inline-block;
+} 
+img {
+  display: inline-block;
+  max-width: 20vw;
+  max-height: 20vh;
+  border-radius: 10px;
+}
